@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll, } from "motion/react";
 
-import React, { ReactNode, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { OtomatikaLogo } from "@/assets/logos";
 import { Link } from "react-router-dom";
 
@@ -252,7 +252,7 @@ export const NavbarButton = ({
   children: React.ReactNode;
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient";
-} & (React.ComponentPropsWithoutRef<"button">)): ReactNode => {
+} & (React.ComponentPropsWithoutRef<"button">)) => {
   const baseStyles =
     "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
