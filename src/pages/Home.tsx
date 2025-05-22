@@ -1,6 +1,5 @@
 import {
   DotBackground,
-  FloatingDockDemo,
   TrustedBySection,
   InfiniteTestimonialsDemo, CTA_3, OtomatikaScrollReveal, GlobeDemo
 } from "@/components";
@@ -35,7 +34,7 @@ const Home = () => {
           <img src={PaperClip} alt="paper clip"
                className="absolute left-5 -top-10 font-medium z-10 h-20 w-20 aspect-square"/>
         </div>
-        <FloatingDockDemo/>
+        {/*<FloatingDockDemo/>*/}
       </section>
 
       <TrustedBySection/>

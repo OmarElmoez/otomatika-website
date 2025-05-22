@@ -10,7 +10,6 @@ import AnimatedModalDemo from "./custom/AnimatedModal.tsx";
 import FloatingDockDemo from "./custom/FloatingDocks.tsx";
 import GlobeDemo from "./custom/Globe.tsx";
 import Footer from "./custom/Footer.tsx";
-import CompareDemo from "./custom/Compare.tsx";
 import CTA from "./custom/CTA.tsx";
 import CTA_3 from "./custom/CTA_3.tsx";
 import Hero from "./custom/Hero.tsx";
@@ -39,7 +38,6 @@ export {
   FloatingDockDemo,
   GlobeDemo,
   Footer,
-  CompareDemo,
   CTA,
   CTA_3,
   Hero,
