@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
-import { About, AgentPage, Home, Project } from "@/pages";
+import { AboutUs, Home, Project } from "@/pages";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -11,16 +11,12 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "about",
-        element: <About />
+        path: "about-us",
+        element: <AboutUs />
       },
       {
         path: "projects/:projectName",
         element: <Project />
-      },
-      {
-        path: "agent",
-        element: <AgentPage />
       },
       // Add more routes here as needed
     ]

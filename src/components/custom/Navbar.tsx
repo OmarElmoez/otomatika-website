@@ -12,6 +12,7 @@ import { Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu.tsx";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import WebnwellImg from '@/assets/webnwell-hero-img.png'
+import { Link } from "react-router-dom";
 
 const ResizableNavbar = () => {
   const navItems = [
@@ -98,6 +99,7 @@ const ResizableNavbar = () => {
             {/*</MenuItem>*/}
 
           </Menu>
+          <Link to="/about-us" className="text-white">About us</Link>
           <div className="flex items-center gap-4">
             <NavbarButton variant="secondary">Login</NavbarButton>
             <NavbarButton variant="primary">Book a call</NavbarButton>

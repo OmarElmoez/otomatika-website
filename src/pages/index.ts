@@ -1,5 +1,5 @@
-import About from "./About";
+import AboutUs from "./AboutUs.tsx";
 import Project from "./Project";
 import Home from "./Home";
-import AgentPage from "./Agent";
-export { About, Project, Home, AgentPage };
+
+export { AboutUs, Project, Home };

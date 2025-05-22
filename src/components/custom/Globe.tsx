@@ -393,33 +393,51 @@ const GlobeDemo = () => {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
+    <div className="flex flex-col md:flex-row items-center justify-between pt-10 pb-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
       <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="div"
-        >
-          <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-          We are available everywhere
-          </h2>
-          <p className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
-          Our platform is available in all countries, will support from over 20,000+ representatives
-          </p>
-        </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
-          <World data={sampleArcs} globeConfig={globeConfig} />
+        {/* Two column layout */}
+        <div className="flex flex-col md:flex-row items-center justify-between h-full">
+          {/* Left column - World component */}
+          <div className="w-full md:w-1/2 h-[300px] md:h-full relative order-2 md:order-1">
+            <World data={sampleArcs} globeConfig={globeConfig} />
+          </div>
+
+          {/* Right column - Text and CTA */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+            }}
+            className="w-full md:w-1/2 flex flex-col justify-center items-start md:items-start px-4 md:px-8 order-1 md:order-2 mb-8 md:mb-0"
+          >
+            <h2 className="text-left text-xl md:text-4xl font-bold text-black dark:text-white">
+            We are available everywhere
+            </h2>
+            <p className="text-left text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2">
+            Our platform is available in all countries, with support from over 20,000+ representatives worldwide. Connect with our global network to expand your reach and grow your business.
+            </p>
+            <div className="mt-6">
+              <a href="#"
+                className="flex items-center justify-center w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-6 py-3 dark:bg-gradient-to-r dark:from-blue-600 dark:to-cyan-500 dark:hover:from-blue-700 dark:hover:to-cyan-600 focus:outline-none dark:focus:ring-primary-800 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                  <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"></path>
+                </svg>
+                Explore Global Network
+              </a>
+            </div>
+          </motion.div>
         </div>
+
+        {/* Gradient overlay */}
+        <div className="absolute w-full bottom-0 inset-x-0 h-20 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
       </div>
     </div>
   );

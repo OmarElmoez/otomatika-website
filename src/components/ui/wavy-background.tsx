@@ -12,6 +12,7 @@ export const WavyBackground = ({
   blur = 10,
   speed = "fast",
   waveOpacity = 0.5,
+  height = "50vh",
   ...props
 }: {
   children?: any;
@@ -23,6 +24,7 @@ export const WavyBackground = ({
   blur?: number;
   speed?: "slow" | "fast";
   waveOpacity?: number;
+  height?: string;
   [key: string]: any;
 }) => {
   const noise = createNoise3D();
@@ -48,13 +50,18 @@ export const WavyBackground = ({
   const init = () => {
     canvas = canvasRef.current;
     ctx = canvas.getContext("2d");
+
+    // Get the container element (parent of the canvas)
+    const container = canvas.parentElement;
+
     w = ctx.canvas.width = window.innerWidth;
-    h = ctx.canvas.height = window.innerHeight;
+    h = ctx.canvas.height = container.clientHeight || window.innerHeight;
     ctx.filter = `blur(${blur}px)`;
     nt = 0;
+
     window.onresize = function () {
       w = ctx.canvas.width = window.innerWidth;
-      h = ctx.canvas.height = window.innerHeight;
+      h = ctx.canvas.height = container.clientHeight || window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
     };
     render();
@@ -111,12 +118,13 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "h-screen flex flex-col items-center justify-center relative",
+        "flex flex-col items-center justify-center relative",
         containerClassName
       )}
+      style={{ height }}
     >
       <canvas
-        className="absolute inset-0 z-0 w-full h-auto"
+        className="absolute inset-0 z-0 w-full h-full"
         ref={canvasRef}
         id="canvas"
         style={{
