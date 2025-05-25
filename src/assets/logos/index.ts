@@ -1,6 +1,6 @@
 // Import all logo assets
 import nationalServicesLogo from './National-Services-LOGO-2.png';
-import digihavenLogo from './Digihaven-Black.png';
+import digihavenLogo from './Digihaven-Black.jpg';
 import thysCommunicatieLogo from './thys_communicatie_logo.png';
 import webNWellLogo from './webnwell_logo.png';
 import theSearchEngineersLogo from './the_search_engineers_logo.png';

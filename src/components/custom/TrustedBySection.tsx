@@ -1,5 +1,5 @@
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards.tsx';
-import { AllCompanyLogos } from '../../assets/logos';
+import { AllCompanyLogos } from '@/assets/logos';
 
 export const TrustedBySection = () => {
   return (
