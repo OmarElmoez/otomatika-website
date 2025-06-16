@@ -12,10 +12,8 @@ import GlobeDemo from "./custom/Globe.tsx";
 import Footer from "./custom/Footer.tsx";
 import CTA from "./custom/CTA.tsx";
 import CTA_3 from "./custom/CTA_3.tsx";
-import Hero from "./custom/Hero.tsx";
 import Gallery from "./custom/Gallery.tsx";
 import VortexDemo from "./custom/CTA_2.tsx";
-import Cards from "./custom/Cards.tsx";
 import FeaturesSection from "./custom/FeaturesSection.tsx";
 import Stats from "./custom/Stats.tsx";
 import AboutUsHero from "./custom/about-us-hero.tsx";
@@ -40,10 +38,8 @@ export {
   Footer,
   CTA,
   CTA_3,
-  Hero,
   Gallery,
   VortexDemo,
-  Cards,
   FeaturesSection,
   Stats,
   AboutUsHero,
