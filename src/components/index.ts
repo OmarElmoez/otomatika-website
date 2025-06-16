@@ -16,7 +16,6 @@ import Hero from "./custom/Hero.tsx";
 import Gallery from "./custom/Gallery.tsx";
 import VortexDemo from "./custom/CTA_2.tsx";
 import Cards from "./custom/Cards.tsx";
-import ProjectHero from "./custom/ProjectHero.tsx";
 import FeaturesSection from "./custom/FeaturesSection.tsx";
 import Stats from "./custom/Stats.tsx";
 import AboutUsHero from "./custom/about-us-hero.tsx";
@@ -24,6 +23,7 @@ import InfiniteTestimonialsDemo from "./custom/infinite-testimonials.tsx";
 import OtomatikaScrollReveal from "./custom/otomatika-scroll-reveal.tsx";
 import ServicesSection from "./custom/services-section.tsx";
 import ScrollToTop from "./custom/ScrollToTop.tsx";
+import { HeroParallax } from "./ui/hero-parallax.tsx";
 
 export {
   ResizableNavbar,
@@ -44,7 +44,6 @@ export {
   Gallery,
   VortexDemo,
   Cards,
-  ProjectHero,
   FeaturesSection,
   Stats,
   AboutUsHero,
@@ -52,4 +51,5 @@ export {
   OtomatikaScrollReveal,
   ServicesSection,
   ScrollToTop,
+  HeroParallax,
 }

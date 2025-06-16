@@ -3,7 +3,7 @@ import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
-import HeroImage from "@/assets/webnwell-hero-img.png"
+import { webnwellHeroImage } from "@/assets/projects/webnwell";
 
 const FeaturesSection = () =>  {
   const features = [
@@ -109,7 +109,7 @@ export const SkeletonOne = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <img
-            src={HeroImage}
+            src={webnwellHeroImage}
             alt="header"
             width={800}
             height={800}

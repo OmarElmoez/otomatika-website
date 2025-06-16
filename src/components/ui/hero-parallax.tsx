@@ -10,17 +10,13 @@ import {
 
 
 export const HeroParallax = ({
-                               products,
-                             }: {
-  products: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  }[];
+  heroData,
+}: {
+  heroData: TProjectHero;
 }) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+  const firstRow = heroData.images.slice(0, 3);
+  const secondRow = heroData.images.slice(3, 6);
+  const thirdRow = heroData.images.slice(6, 10);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -56,7 +52,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[250vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[235vh] pt-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -69,11 +65,11 @@ export const HeroParallax = ({
         className=""
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
+          {firstRow.map((image) => (
             <ProductCard
-              product={product}
+              product={image}
               translate={translateX}
-              key={product.title}
+              key={image.title}
             />
           ))}
         </motion.div>
@@ -101,36 +97,34 @@ export const HeroParallax = ({
 };
 
 import { ArrowRight } from "lucide-react";
+import { TProduct, TProjectHero } from "@/shared/types.types";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0 z-50">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br/> development studio
+        Webnwell
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+        Advanced Ads Analytics Dashboard that helps you analyze your advertising performance, track metrics, and optimize your campaigns all in one place.
       </p>
-      <button
-        className="px-8 py-4 mt-8 text-lg font-medium text-white transition-all bg-blue-600 rounded-full hover:bg-blue-700 flex items-center gap-2">
-        Start Your Project Now
-        <ArrowRight className="w-5 h-5"/>
-      </button>
+      <Link to="/project">
+        <button
+          className="px-8 py-4 mt-8 text-lg font-medium text-white transition-all bg-blue-600 rounded-full hover:bg-blue-700 flex items-center gap-2 cursor-pointer">
+          Start Your Project Now
+          <ArrowRight className="w-5 h-5" />
+        </button>
+      </Link>
     </div>
   );
 };
 
 export const ProductCard = ({
-                              product,
-                              translate,
-                            }: {
-  product: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  };
+  product,
+  translate,
+}: {
+  product: TProduct;
   translate: MotionValue<number>;
 }) => {
   return (
@@ -142,7 +136,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product h-96 w-[50rem] relative shrink-0"
     >
       <a
         href={product.link}
@@ -154,6 +148,7 @@ export const ProductCard = ({
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
+          loading="lazy"
         />
       </a>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
