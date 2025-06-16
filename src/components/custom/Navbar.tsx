@@ -11,7 +11,7 @@ import {
 import { Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu.tsx";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import WebnwellImg from '@/assets/webnwell-hero-img.png'
+import { webnwellHeroImage } from "@/assets/projects/webnwell";
 import { Link } from "react-router-dom";
 
 const ResizableNavbar = () => {
@@ -65,7 +65,7 @@ const ResizableNavbar = () => {
                 <ProductItem
                   title="Webnwell"
                   href="projects/webnwell"
-                  src={WebnwellImg}
+                  src={webnwellHeroImage}
                   description="Track your ads from one place"
                 />
                 <ProductItem
